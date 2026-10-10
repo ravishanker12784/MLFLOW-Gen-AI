@@ -5,7 +5,7 @@ import pandas as pd
 import dagshub
 
 dagshub.init(repo_owner='krishnaik06', repo_name='MLfLow', mlflow=True)
-mlflow.set_tracking_uri("https://dagshub.com/ravishanker12784/MLfLow.mlflow")
+mlflow.set_tracking_uri("https://github.com/ravishanker12784/MLFLOW-Gen-AI.git")
 eval_data = pd.DataFrame(
     {
         "inputs": [
