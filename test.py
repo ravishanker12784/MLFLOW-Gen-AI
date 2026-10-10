@@ -1,10 +1,17 @@
+!pip install -q mlflow openai dagshub
+
 import mlflow
 import openai
 import os
 import pandas as pd
 import dagshub
 
+import dagshub
+dagshub.init(repo_owner='ravishanker12784', repo_name='MLFLOW-Gen-AI', mlflow=True)
 
+with mlflow.start_run():
+  mlflow.log_param('parameter name', 'value')
+  mlflow.log_metric('metric name', 1)
 mlflow.set_tracking_uri("https://dagshub.com/ravishanker12784/MLFLOW-Gen-AI.mlflow")
 eval_data = pd.DataFrame(
     {
@@ -56,4 +63,3 @@ with mlflow.start_run() as run:
     df=pd.DataFrame(eval_table)
     df.to_csv('eval.csv')
     print(f"See evaluation table below: \n{eval_table}")
-
